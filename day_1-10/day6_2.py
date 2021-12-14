@@ -1,6 +1,6 @@
 import numpy as np
 
-file = open("inputs/day6.txt")
+file = open("../inputs/day_1-10/day6.txt")
 inputState = file.readline().strip().split(",")
 
 state = np.zeros(9)

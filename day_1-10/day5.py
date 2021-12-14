@@ -12,32 +12,16 @@ def paintVent(vent, ventMap):
 
         for i in range(start, end + 1):
             ventMap[row][i] += 1
-    elif vent[0][1] == vent[1][1]:
+    else:
         start = min(vent[0][0], vent[1][0])
         end = max(vent[0][0], vent[1][0])
         col = vent[0][1]
 
         for i in range(start, end + 1):
             ventMap[i][col] += 1
-    else:
-        x = vent[0][0]
-        y = vent[0][1]
-        stepX = 1
-        stepY = 1
-        if x > vent[1][0]:
-            stepX = -1
-        if y > vent[1][1]:
-            stepY = -1
-        x -= stepX
-        y -= stepY
-
-        while x != vent[1][0]:
-            x += stepX
-            y += stepY
-            ventMap[x][y] += 1
 
 
-file = open("inputs/day5.txt")
+file = open("../inputs/day_1-10/day5.txt")
 lines = file.readlines()
 
 for line in range(len(lines)):
@@ -47,6 +31,18 @@ for line in range(len(lines)):
         for num in range(len(lines[line][part])):
             lines[line][part][num] = int(lines[line][part][num])
 
+lines = np.array(lines)
+
+filter_arr = []
+
+for line in lines:
+    if line[0][0] == line[1][0] or line[0][1] == line[1][1]:
+        filter_arr.append(True)
+    else:
+        filter_arr.append(False)
+
+lines = lines[filter_arr]
+
 maxSize = 0
 
 for line in range(len(lines)):
@@ -55,7 +51,7 @@ for line in range(len(lines)):
             if lines[line][part][num] > maxSize:
                 maxSize = lines[line][part][num]
 
-ventMap = numpy.zeros((maxSize + 1, maxSize + 1))
+ventMap = numpy.zeros((maxSize+1, maxSize+1))
 
 for line in lines:
     paintVent(line, ventMap)
@@ -65,6 +61,6 @@ dangerZones = 0
 for row in ventMap:
     for num in row:
         if num > 1:
-            dangerZones += 1
+            dangerZones+=1
 
 print(dangerZones)

@@ -31,7 +31,7 @@ def checkBingo(numbs, boards):
 
 
 
-file = open("inputs/day4.txt")
+file = open("../inputs/day_1-10/day4.txt")
 lines = file.readlines()
 
 rndNmbs = []

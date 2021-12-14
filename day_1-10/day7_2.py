@@ -1,6 +1,6 @@
 import sys
 
-file = open("inputs/day7.txt")
+file = open("../inputs/day_1-10/day7.txt")
 line = file.readline().strip().split(",")
 
 

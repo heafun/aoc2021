@@ -40,7 +40,7 @@ def getbasinsize(row, col):
     return size
 
 
-file = open("inputs/day9.txt")
+file = open("../inputs/day_1-10/day9.txt")
 lines = file.readlines()
 
 heightmap = []

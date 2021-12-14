@@ -8,7 +8,7 @@ def getPoints(character):
     return switcher.get(character)
 
 
-file = open("inputs/day10.txt")
+file = open("../inputs/day_1-10/day10.txt")
 lines = file.readlines()
 
 openList = []

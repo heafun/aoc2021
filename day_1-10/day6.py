@@ -1,4 +1,4 @@
-file = open("inputs/day6.txt")
+file = open("../inputs/day_1-10/day6.txt")
 inputState = file.readline().strip().split(",")
 
 for fish in range(len(inputState)):

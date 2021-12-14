@@ -32,7 +32,7 @@ def getRating(most, list):
                 filter(i, "0", list)
 
 
-file = open("inputs/day3.txt")
+file = open("../inputs/day_1-10/day3.txt")
 lines = file.readlines()
 
 oxygen = copy.copy(lines)
